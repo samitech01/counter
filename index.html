@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Counter By Sami</title>
+</head>
+
+<style>
+
+body{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.main{
+    text-align: center;
+}
+button{
+    height: auto;
+    background-color: aqua;
+}
+.change{
+    height: 10px;
+}
+
+
+</style>
+
+
+<body>
+
+    <div class="main">
+        <h1 class="count">0</h1>
+        <button class="plus">+</button>
+        <button class="minus">-</button>
+        <div class="dis" style="display: flex;">
+            Incriment/Decriment by=<input type="text"
+            value="1" class="change">
+            
+        </div>
+        <button class="restart">Restart</button>
+    </div>
+
+
+
+   <!-- javascript file -->
+    <script>
+        const count = document.querySelector('.count');
+const plus = document.querySelector('.plus');
+const minus = document.querySelector('.minus');
+const change = document.querySelector('.change');
+const restart= document.querySelector('.restart')
+
+plus.addEventListener('click', () => {
+    let countValue = parseInt(count.innerText);
+    let changeValue = parseInt(change.value) || 0; 
+    count.innerText = countValue + changeValue;
+});
+
+minus.addEventListener('click', () => {
+    let countValue = parseInt(count.innerText);
+    let changeValue = parseInt(change.value) || 0; 
+    count.innerText = countValue - changeValue;
+});
+
+restart .addEventListener('click',() => {
+    count.innerText= 0;
+}
+)
+
+    </script>
+    
+</body>
+</html>
